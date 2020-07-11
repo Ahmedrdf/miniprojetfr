@@ -1,0 +1,18 @@
+<h2>Spectateur Details</h2> 
+
+<hr/>
+<div *ngIf="spectateur">
+  <div>
+    <label><b>Nombre: </b></label> {{spectateur.nbre}}
+  </div>
+  <div>
+    <label><b>Match: </b></label> {{spectateur.description}}
+  </div>
+  <div>
+    <label><b>Equipe: </b></label> {{spectateur.equipe}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Spectateur List</button><br>

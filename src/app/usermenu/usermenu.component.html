@@ -1,0 +1,27 @@
+<div class="panel-heading">
+      <h2>Menu de Jour </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Menu de Jour </th>
+            <th>Prix</th>
+            <th>Etat</th>
+            
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ar of articles | async">
+            <td>{{ar.articleName}}</td>
+            <td>{{ar.ref}}</td>
+            <td>{{ar.disponible}}</td>
+            <td>
+              <button (click)="update(ar.id)" class="btn btn-info" style="margin-left: 10px">Ajouter au Panier</button>      
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+

@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2> Menu de Jour </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Menu de Jour </th>
+            <th>Prix</th>
+            <th>Quantite Restant</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ar of articles | async">
+            <td>{{ar.articleName}}</td>
+            <td>{{ar.ref}}</td>
+            <td>{{ar.nbre}}</td>
+            <td><button (click)="deletearticle(ar.id)" class="btn btn-danger">Delete</button>
+                <button (click)="update(ar.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                <button (click)="articleDetails(ar.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  

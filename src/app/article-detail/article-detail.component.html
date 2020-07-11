@@ -1,0 +1,18 @@
+<h2>Details Menu</h2> 
+
+<hr/>
+<div *ngIf="articles">
+  <div>
+    <label><b>Menu de Jour : </b></label> {{articles.articleName}}
+  </div>
+  <div>
+    <label><b>Prix : </b></label> {{articles.ref}}
+  </div>
+  <div>
+    <label><b>Etat: </b></label> {{articles.disponible}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Retourner au liste</button><br>

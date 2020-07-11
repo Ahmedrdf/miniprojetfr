@@ -1,0 +1,67 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img img src="assets/confledis.png"  style=" padding: 5px;
+      width: 130px;" alt="">
+    </a>
+  <div style=" margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;"> <a href="#" class="navbar-brand">Mini Projet</a></div> 
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+   <!--   <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+      </li>
+    -->
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a routerLink="listearticle" class="nav-link" routerLinkActive="active">Liste Articles</a>
+    </li>                  
+ 
+    <li class="nav-item">
+        <a routerLink="addarticles" class="nav-link" routerLinkActive="active">Add Articles</a>
+    </li>
+
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="navbar navbar-expand-sm bg-success navbar-dark"  >
+
+    <ul class="navbar-nav" *ngIf="isLoggedIn">
+      <li class="nav-item">
+          <a routerLink="menuJour" class="nav-link" routerLinkActive="active">Menu de Jour </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="menupanier" class="nav-link" routerLinkActive="active">Panier </a>
+      </li>
+               
+    </ul>     
+   
+
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

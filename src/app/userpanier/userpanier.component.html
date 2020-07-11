@@ -1,0 +1,32 @@
+
+<div class="panel-heading">
+    <h2>Panier</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Menu de Jour </th>
+          <th>Prix</th>
+       
+          
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ar of articles | async">
+          <td><a class="navbar-brand" href="#">
+            <img img src="assets/logopanier.jpg"  style=" padding: 5px;
+            width: 60px;" alt="">
+          </a></td>
+          <td>{{ar.articleName}}</td>
+          <td>{{ar.ref}}</td>
+        
+          <td>
+            <button (click)="deletearticle(ar.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
